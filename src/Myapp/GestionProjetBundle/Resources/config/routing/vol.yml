@@ -1,0 +1,28 @@
+vol_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Vol:index" }
+    methods:  GET
+
+vol_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Vol:show" }
+    methods:  GET
+
+vol_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Vol:new" }
+    methods:  [GET, POST]
+
+vol_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Vol:edit" }
+    methods:  [GET, POST]
+
+vol_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Vol:delete" }
+    methods:  DELETE
+    
+vol_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Vol:modifier" }    

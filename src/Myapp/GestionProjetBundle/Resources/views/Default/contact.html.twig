@@ -1,0 +1,274 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+
+
+    <!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+    -->
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Avatar Travel Agency</title>
+
+            <!--//web-font-->
+            <!-- Custom Theme files -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="keywords" content="Excursion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+                  Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+            <!--//end-smoth-scrolling-->
+
+        <a class="navbar-brand"><img src="{{asset('templates/images/image2.png')}}" alt=""></a>        
+
+    </head>
+    <body>
+        <br>
+        <br>
+
+
+
+        <div id="contact-page">
+
+
+
+            <br>
+            <div claas="main-content">
+                <div class="container">
+
+                    <!-- google map iframe -->
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.6059658111553!2d10.220578715288635!3d36.756028079957574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd366439948a3f%3A0xa8ca5415dce619ae!2sMicrosystem+Solutions!5e0!3m2!1sfr!2stn!4v1516546210554" width="1200" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                       
+                    <!-- /.g-map (google-map end) -->
+
+
+
+                    <!-- contact adresses section begin -->
+                    <section class="contact-address bg-white">
+                        <div class="row">
+
+                            <div class="col-md-4 col-xs-12">
+                                <div class="address-info">
+                                    <div class="row">
+
+                                        <div class="col-md-3 col-xs-3">
+                                            <div class="address-info-icon text-center center-block bg-light-gray">
+                                                <i class="fa fa-map-marker"></i>
+                                            </div> <!-- /.address-info-icon -->
+                                        </div>
+
+                                        <div class="col-md-9 col-xs-9 address-info-desc">
+                                            <h3>Adresse </h3>
+                                            <p>
+                                                APP 9 Residence el Hakim Av de paris  <br/>
+                                                Ben Arous
+                                            </p>
+                                        </div> <!-- /.address-info-desc -->
+
+                                    </div>
+                                </div> <!-- /.address-info -->
+                            </div>
+
+                            <div class="col-md-4 col-xs-12">
+                                <div class="address-info">
+                                    <div class="row">
+
+                                        <div class="col-md-3 col-xs-3">
+                                            <div class="address-info-icon text-center center-block bg-light-gray">
+                                                <i class="fa fa-phone"></i>
+                                            </div> <!-- /.address-info-icon -->
+                                        </div>
+
+                                        <div class="col-md-9 col-xs-9 address-info-desc">
+                                            <h3>Tél</h3>
+                                            <p>
+                                                (+216) 79 391 087 
+                                                (+216) 79 391 088
+
+                                                <br/>
+                                                Fax +216 79 391 056
+                                            </p>
+                                        </div> <!-- /.address-info-desc -->
+
+                                    </div>
+                                </div> <!-- /.address-info -->
+                            </div>
+
+                            <div class="col-md-4 col-xs-12">
+                                <div class="address-info">
+                                    <div class="row">
+
+                                        <div class="col-md-3 col-xs-3">
+                                            <div class="address-info-icon text-center center-block bg-light-gray">
+                                                <i class="fa fa-envelope-o"></i>
+                                            </div> <!-- /.address-info-icon -->
+                                        </div>
+
+                                        <div class="col-md-9 col-xs-9 address-info-desc">
+                                            <h3>Email </h3>
+                                            <p>
+                                                avatar.voyage@gmail.com
+                                            </p>
+                                        </div> <!-- /.address-info-desc -->
+
+                                    </div>
+                                </div> <!-- /.address-info -->
+                            </div>
+
+                        </div>
+                    </section> <!-- /.contact-address -->
+
+
+
+                    <!-- contact-form -->
+                    <section class="contact-form">
+
+                        <!-- call for contact -->
+                        <div class="headline text-center">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <h2 class="section-title"> Dire bonjour! Ne soyez pas timide  </h2>
+                                    <br>
+                                    <br>
+                                    <p class="section-sub-title">
+                                        si vous avez des questions ou des commentaires, ou me contacterai pour me de dire bonjour, 
+                                        s’il vous plaît n’hésitez pas à contacter notre équipe amicale
+                                    </p> <!-- /section-sub-title -->
+                                </div>
+                            </div>
+                        </div> <!-- /.contact-speech -->
+
+                        <form method="post" action="{{ path('contact') }}">
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+
+                                    <div class="form-group">
+                                        {{ form_label(form.nom) }}
+                                        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom' } }) }}
+                                        {{ form_errors(form.nom) }}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ form_label(form.email) }} 
+                                        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'email' } }) }}
+                                        {{ form_errors(form.email) }}
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ form_label(form.objet) }}
+                                        {{ form_widget(form.objet, { 'attr': {'class': 'form-control', 'placeholder': 'Objet'|trans } }) }}
+                                        {{ form_errors(form.objet) }}
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-8">
+                                    {{ form_label(form.sujet) }}
+                                    {{ form_widget(form.sujet, { 'attr': {'class': 'form-control','rows': '15', 'placeholder': 'ecrire votre message ici......'|trans } }) }}
+                                    {{ form_errors(form.sujet) }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center" style="margin-top: 40px;">
+                                {{ form_rest(form) }}
+                                <!-- end section -->
+                            </div>
+                            <div>      
+
+                                <button type="submit" id="submit" name="submit" class="btn btn-info">  Envoyer </button>
+
+                        </form> <!-- form end -->
+                    </section> <!-- /.contact-form -->
+
+                </div> <!-- container -->
+            </div>
+            <!-- main-content end -->
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-2 about">
+
+                        <h3>Liens</h3>
+
+
+                        <li><a href="{{path('acceuil')}}">Acceuil</a></li>
+                        <li><a href="#">Hotel</a></li>
+                        <li><a href="{{path('casa')}}">Voyages</a></li>
+                        <li><a href="{{path('vol_index')}}">Billeterie</a></li> 
+                        <li><a href="{{path('omra1')}}">Omra</a></li> 
+                        <li><a href="{{path('galerie')}}">Gallerie</a></li> 
+                        <li><a href="{{path('contact')}}">Contact</a></li>
+
+
+
+                        </ul>
+
+                    </div>   
+
+
+                    <div class="col-md-3 about">
+
+                        <h3>Voyages</h3>
+
+                        <li><a href="{{path('belgrade')}}">Belgrade / ZLATIBOR</a></li>
+                        <li><a href="{{path('prague')}}">PRAGUE/VIENNE/BRATISLAVA</a></li>
+                        <li><a href="{{path('barcelone')}}">BARCELONE MARS 2019 </a></li>
+                        <li><a href="{{path('beyrouth')}}">BEYROUTH</a></li>
+                        <li><a href="{{path('portugal')}}">PORTUGAL</a></li>
+                        <li><a href="{{path('nice')}}">NICE/CANNES/MONNACO</a></li>
+
+                    </div>
+
+                    <div class="col-md-3 about">
+
+
+                        <li><a href="{{path('inde')}}">INDE ET ISTANBUL</a></li>
+                        <li><a href="{{path('rome')}}">ROME/FLORENCE/PISE/VENISE</a></li>
+                        <li><a href="{{path('paris')}}">PARIS MARS 2019</a></li>
+                        <li><a href="{{path('madrid')}}">MADRID ANDALOUSIE COSTA DEL SOL </a></li>
+                        <li><a href="{{path('bruxelle')}}">PARIS / BRUXELLES / AMSTERDAM</a></li>
+                        <li><a href="{{path('casa')}}">CASABLANCA /RABAT / MARRAKECH </a></li>
+
+                    </div>
+
+
+                    <div class="col-md-3 address">
+                        <h3>Adresse</h3>
+
+                        <ul>
+                            <li><span></span>  APP 9 Residence el Hakim Av de paris Ben Arous</li>
+                            <li><span class="ph-no"></span>(+216) 79 391 087 <br>
+                                (+216) 79 391 088 </li>
+                            <li><span class="mail"></span><a href="mailto:example@mail.com">avatar.voyage@gmail.com</a></li>
+                        </ul>
+                    </div>	
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>           
+            <div class="copy-right">
+                <div class="container">
+                    <p>Copyright © 2019 MicroSystemSolutions. All rights reserved </p>
+                </div>
+            </div>
+            <!--smooth-scrolling-of-move-up-->
+
+            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+            <!--//smooth-scrolling-of-move-up-->
+            <!-- Bootstrap core JavaScript
+        ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+
+    </body>
+</html>
+
+{%endblock  %}

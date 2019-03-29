@@ -1,0 +1,28 @@
+bateaux_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Bateaux:index" }
+    methods:  GET
+
+bateaux_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Bateaux:show" }
+    methods:  GET
+
+bateaux_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Bateaux:new" }
+    methods:  [GET, POST]
+
+bateaux_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Bateaux:edit" }
+    methods:  [GET, POST]
+
+bateaux_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Bateaux:delete" }
+    methods:  DELETE
+    
+bateaux_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Bateaux:modifier" }       

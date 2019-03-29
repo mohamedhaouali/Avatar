@@ -1,0 +1,119 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Bateaux</p>
+            <div class="list-group">
+                <a href="{{path('bateaux_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('bateaux_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('bateaux_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-9">
+            <h1>Bateaux</h1>
+
+            <table class ="table table-striped" >
+                <tbody>
+
+             <tr>
+                <th>Id</th>
+                <td>{{ bateaux.id }}</td>
+            </tr>
+            <tr>
+                <th>Typevol</th>
+                <td>{{ bateaux.typevol }}</td>
+            </tr>
+            <tr>
+                <th>Datedepart</th>
+                <td>{% if bateaux.datedepart %}{{ bateaux.datedepart|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Villededepart</th>
+                <td>{{ bateaux.villededepart }}</td>
+            </tr>
+            <tr>
+                <th>Typecabine</th>
+                <td>{{ bateaux.typecabine }}</td>
+            </tr>
+            <tr>
+                <th>Typevehicule</th>
+                <td>{{ bateaux.typevehicule }}</td>
+            </tr>
+            <tr>
+                <th>Adulte</th>
+                <td>{{ bateaux.adulte }}</td>
+            </tr>
+            <tr>
+                <th>Enfant</th>
+                <td>{{ bateaux.enfant }}</td>
+            </tr>
+            <tr>
+                <th>Bebe</th>
+                <td>{{ bateaux.bebe }}</td>
+            </tr>
+            <tr>
+                <th>Nourissons</th>
+                <td>{{ bateaux.nourissons }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ bateaux.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ bateaux.nom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ bateaux.email }}</td>
+            </tr>
+            <tr>
+                <th>Observation</th>
+                <td>{{ bateaux.observation }}</td>
+            </tr>
+             
+
+
+              
+
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    {#{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }#}
+                </li>
+            </ul>
+
+        </div>    
+    </div>
+{% endblock A %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

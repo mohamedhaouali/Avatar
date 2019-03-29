@@ -1,0 +1,32 @@
+hotel_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Hotel:index" }
+    methods:  GET
+
+hotel_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Hotel:show" }
+    methods:  GET
+
+hotel_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Hotel:new" }
+    methods:  [GET, POST]
+
+hotel_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Hotel:edit" }
+    methods:  [GET, POST]
+
+hotel_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Hotel:delete" }
+    methods:  DELETE
+    
+hotel_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Hotel:modifier" }  
+    
+hotel_recherche:
+    path:     /recherche
+    defaults: { _controller: "GestionProjetBundle:Hotel:recherche" }      

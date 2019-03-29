@@ -1,0 +1,178 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+
+
+<div class="container">
+
+                <form method="POST" name="clients" enctype="multipart/form-data" action="/billeterievol/addAjax" id="myFormVol" class="cforms">        <div class="one_full">
+            <div class="stcode_title4">
+                <h3><span class="line"></span><span class="text"><strong>Coordonées</strong></span></h3>
+            </div>
+        </div>
+        <div class="one_full">
+            <div class="one_full">
+                <div class="info-block" style="min-height: auto; padding-top: 15px">
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="type_vol">Type Vol <span style="color:red;">(*)</span></label>
+                            <select name="type_vol" id="type_vol" class="form-control borderright valuestyle"><option value="0">Aller Simple</option>
+<option value="1">Aller/Retour</option></select>                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="date_depart">Date départ  <span style="color:red;">(*)</span></label>
+                            <div class="input-group date" id="datetimepicker12">
+                                <input type="text" name="date_depart" id="date_depart" class="form-control borderright valuestyle" min="12-03-2019" value="12-03-2019">  <span class="input-group-addon">
+                                    <i class="fa fa-calendar fa-grean"></i>
+                                </span>
+                            </div>
+                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth" id="date_retour_container" style="display: none;">
+                        <div class="form-group">
+                            <label class="control-label" for="date_retour">Date Retour  <span style="color:red;">(*)</span></label>
+                            <div class="input-group date" id="datetimepicker13">
+                                <input type="text" name="date_retour" id="date_retour" class="form-control borderright valuestyle" min="13-03-2019" value="13-03-2019">                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar fa-grean"></i>
+                                </span>
+                            </div>
+                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth last">
+                        <div class="form-group">
+                            <label class="control-label" for="civilite">Civilité <span style="color:red;">(*)</span></label>
+                            <select name="civilite" class="form-control borderright valuestyle" id="civilite"><option value="0">Mr</option>
+<option value="2">Mlle</option>
+<option value="1">Mme</option></select>                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="prenom_client">Prénom <span style="color:red;">(*)</span></label>
+                            <input type="text" name="prenom_client" class="form-control" placeholder="Prénom..." id="prenom_client" value="">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="nom_client">Nom <span style="color:red;">(*)</span></label>
+                            <input type="text" name="nom_client" class="form-control" placeholder="Nom..." id="nom_client" value="">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email <span style="color:red;">(*)</span></label>
+                            <input type="email" name="email" class="form-control" placeholder="Email..." id="email" value="">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth last">
+                        <div class="form-group">
+                            <label class="control-label" for="telephone">Téléphone <span style="color:red;">(*)</span></label>
+                            <input type="text" name="telephone" class="form-control" placeholder="Téléphone..." id="telephone" value="00216">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--<div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label" for="num_passport">Numéro Passport</label>
+                                                <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="one_full">
+            <div class="stcode_title4">
+                <h3><span class="line"></span><span class="text"><strong>Destination</strong></span></h3>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="one_full">
+            <div class="one_full">
+                <div class="info-block" style="min-height: auto; padding-top: 15px">
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="de">Ville/Aéroport <span style="padding-left:35px;">de départ</span> <span style="color:red;">(*)</span></label>
+                            <input type="text" name="ville_depart" id="ville_depart" placeholder="Ville/Aéroport..." class="form-control borderright valuestyle" value="">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="a">Ville/Aéroport <span style="padding-left:35px;">d'arrivée</span> <span style="color:red;">(*)</span></label>
+                            <input type="text" name="ville_arrivee" id="ville_arrivee" placeholder="Ville/Aéroport..." class="form-control borderright valuestyle" value="">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="classe">Classe <span style="color:red;">(*)</span></label>
+                            <select name="classe" id="classe" class="form-control borderright valuestyle"><option value="0">Economique</option>
+<option value="1">Première</option>
+<option value="2">Business</option></select>                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="one_full">
+
+                    <div class="one_fourth ">
+                        <div class="form-group">
+                            <label class="control-label" for="nbAdulte">Nombre Adulte(s) <small style="font-size: smaller !important;"></small> <span style="color:red;">(*)</span></label> 
+                            <input type="number" name="nbAdulte" id="nbAdulte" required="required" class="form-control borderright valuestyle" min="1" max="30" value="1">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="nbEnfant">Nombre Enfant(s) <small style="font-size: smaller !important;">(âge 2-11 ans)</small> <span style="color:red;">(*)</span></label>
+                            <input type="number" name="nbEnfant" id="nbEnfant" required="required" class="form-control borderright valuestyle" min="0" max="10" value="0">                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+                    <div class="one_fourth">
+                        <div class="form-group">
+                            <label class="control-label" for="nbBebe">Nombre Bébé(s) <small style="font-size: smaller !important;">(âge 0-23 mois)</small> <span style="color:red;">(*)</span></label>
+                            <input type="number" name="nbBebe" id="nbBebe" required="required" class="form-control borderright valuestyle" min="0" max="5" value="0">
+
+                            <span class="help-block " style="margin-top: 5px;"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="one_full">
+            <div class="stcode_title4">
+                <h3><span class="line"></span><span class="text"><strong>Observation(s)</strong></span></h3>
+            </div>
+
+        </div>
+
+        <div class="one_full">	
+            <div class="info-block" style="min-height: auto; padding-top: 15px">
+                <div class="one_full">
+                    <div class="form-group">
+
+                        <textarea name="remarque" id="remarque" class="form-control borderright valuestyle"></textarea>                        <span class="help-block " style="margin-top: 5px;"></span>
+                    </div>
+                </div>   
+            </div>
+        </div>
+
+        <div><span style="color:red;">(*)</span> Champ Obligatoire.</div>
+        <div class="clearfix" style="float:right !important;">
+            <button type="submit" class="button one">Envoyer</button>
+        </div>
+        </form>
+    </div>
+    
+    
+    
+{%endblock  %}	    

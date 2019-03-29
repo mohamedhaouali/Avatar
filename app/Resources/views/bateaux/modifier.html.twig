@@ -1,0 +1,96 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des bateaux</p>
+            <div class="list-group">
+                <a href="{{path('bateaux_new')}}"class="list-group-item">Ajouter</a>
+                <a href="{{path('bateaux_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('bateaux_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <table class ="table table-striped">
+                <thead>
+            <tr>
+                
+                <th>Typevol</th>
+                <th>Datedepart</th>
+                <th>Civilite</th>
+                <th>Villededepart</th>
+                <th>Ville arrive</th>
+                <th>Typecabine</th>
+                <th>Typevehicule</th>
+                <th>Adulte</th>
+                <th>Enfant</th>
+                <th>Bebe</th>
+                <th>Nourissons</th>
+                <th>Seniors</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>telephone</th>
+                <th>Observation</th>
+                <th>Actions</th>
+            </tr>
+                </thead>
+                <tbody>
+                    {% for bateaux in bateauxes %}
+                        <tr>
+
+ 
+               
+                <td>{% if bateaux.typevol %}<font color="green">Aller Simple</font>{% else %}<font color="red">Aller/Retour</font>{% endif %}</td>
+                <td>{% if bateaux.datedepart %}{{ bateaux.datedepart|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ bateaux.civilite }}</td>
+                <td>{{ bateaux.villededepart }}</td>
+                <td>{{ bateaux.villearrive }}</td>
+                <td>{{ bateaux.typecabine }}</td>
+                <td>{{ bateaux.typevehicule }}</td>
+                <td>{{ bateaux.adulte }}</td>
+                <td>{{ bateaux.enfant }}</td>
+                <td>{{ bateaux.bebe }}</td>
+                <td>{{ bateaux.nourissons }}</td>
+                <td>{{ bateaux.seniors }}</td>
+                <td>{{ bateaux.prenom }}</td>
+                <td>{{ bateaux.nom }}</td>
+                <td>{{ bateaux.email }}</td>
+                <td>{{ bateaux.telephone }}</td>
+                <td>{{ bateaux.observation }}</td>
+
+
+
+
+
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('bateaux_edit', { 'id': bateaux.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span>   modifier</a>
+                                    </li>
+                                 
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+
+        </div>    
+    </div>
+{% endblock A %}  
+
+
+
+
+
+
+
+
+

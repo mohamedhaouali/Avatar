@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Avatar Travel Agency{% endblock %}</title>
+        {% block stylesheets %}
+
+            <link href="{{asset('templates/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
+            <link href="{{asset('templates/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
+            <!--web-font-->
+            <link href="{{asset('templates/fonts/http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic')}}" rel='stylesheet' type='text/css'>
+            <link href={{asset('templates/fonts/http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700')}}" rel='stylesheet' type='text/css'>
+                  <!--//web-font-->
+
+                  <link rel="stylesheet' href="{{asset('templates/css/swipebox.css')}}">
+            <script src="{{asset('templates/js/jquery.swipebox.min.js')}}"></script> 
+            <script type="text/javascript">
+                jQuery(function ($) {
+                    $(".swipebox").swipebox();
+                });
+            </script>  
+
+        {% endblock %}
+
+
+        <link rel="icon" type="image/x-icon" href="{{asset('templates/images/image2.png')}}" />  
+
+    </head>
+    {% block content %}
+        <body>
+            <div class="top-nav">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="{{path('acceuil')}}" class="active">Acceuil</a></li>
+                                <li><a href="#">Hotel</a></li> 
+                         
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Voyages</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{path('belgrade')}}">BELGRADE / ZLATIBOR </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('casa')}}">CASABLANCA /RABAT /MARRAKECH </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('prague')}}">PRAGUE / VIENNE / BRATISLAVA </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('barcelone')}}">BARCELONE  </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('beyrouth')}}">BEYROUTH  </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('portugal')}}">Portugal</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('nice')}}">NICE/CANNES/MONACO</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('inde')}}">INDE & ISTANBUL</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('rome')}}">ROME / FLORENCE /PISE/ VENISE</a>
+
+                                        </li>  
+
+                                        <li>
+                                            <a href="{{path('paris')}}">PARIS MARS  </a>
+
+                                        </li> 
+
+                                        <li>
+                                            <a href="{{path('bruxelle')}}">PARIS / BRUXELLES/AMSTERDAM  </a>
+
+                                        </li> 
+
+                                        <li>
+                                            <a href="{{path('madrid')}}">MADRID  </a>
+
+                                        </li> 
+
+                                    </ul>  <!-- end of /.dropdown-menu -->
+                                </li> <!-- end of /.dropdown -->  
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Billetterie</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{path('vol_new')}}">Vol</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('bateaux_new')}}">BATEAU</a>
+                                        </li>
+
+
+
+                                    </ul>  <!-- end of /.dropdown-menu -->
+                                </li> <!-- end of /.dropdown -->   
+
+
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Omra</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{path('omra1')}}"> برنامج تيسير  </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('omra2')}}">برنامج رفاهة  </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{path('omra3')}}">برنامج عمرة راقية </a>
+                                        </li>
+
+
+
+                                    </ul>  <!-- end of /.dropdown-menu -->
+                                </li> <!-- end of /.dropdown -->          
+
+
+                                <li><a href="{{path('galerie')}}">Galerie</a></li>
+
+                                <li><a href="{{path('contact')}}">Contact</a></li>
+
+
+
+
+                            </ul>
+
+                            <form class="navbar-form navbar-right" method="POST" action="{{path('voyage_recherche')}}">
+
+                               Destination : <input type="text" name="titre" class="form-control" placeholder="Search..." name="motcle">
+
+                             <button type="submit" class="btn btn-info">Rechercher<span class="fa fa-search"></button>
+
+
+
+                            </form>                                
+
+                           
+     
+                            
+                            
+                            
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>	
+                </nav>		
+            </div>	
+
+
+            <!-- Primary Page Layout
+            ================================================== -->
+
+        {% block body %}{%endblock  %}
+
+
+
+
+
+
+        <!--  Necessary scripts  -->
+
+        <!-- JAVASCRIPT
+    ================================================== -->      
+
+
+        {% block javascripts %}
+
+            <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+            <!-- //Custom Theme files -->
+            <!-- js -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+            <!-- //js -->	
+            <!-- start-smoth-scrolling-->
+            <script type="text/javascript" src="{{asset('templates/js/move-top.js')}}"></script>
+            <script type="text/javascript" src="{{asset('templates/js/easing.js')}}"></script>	
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                    });
+                });
+            </script>
+
+            <script src="{{asset('templates/js/responsiveslides.min.js')}}"></script>
+            <script src="{{asset('templates/js/bootstrap.js')}}"></script>
+
+            <script>
+                // You can also use "$(window).load(function() {"
+                $(function () {
+                    // Slideshow 4
+                    $("#slider3").responsiveSlides({
+                        auto: true,
+                        pager: false,
+                        nav: true,
+                        speed: 500,
+                        namespace: "callbacks",
+                        before: function () {
+                            $('.events').append("<li>before event fired.</li>");
+                        },
+                        after: function () {
+                            $('.events').append("<li>after event fired.</li>");
+                        }
+                    });
+                });
+            </script>
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    /*
+                     var defaults = {
+                     containerID: 'toTop', // fading element id
+                     containerHoverID: 'toTopHover', // fading element hover id
+                     scrollSpeed: 1200,
+                     easingType: 'linear' 
+                     };
+                     */
+
+                    $().UItoTop({easingType: 'easeOutQuart'});
+
+                });
+            </script>                     
+
+            <!-- js -->
+            <script src=="{{asset('templates/js/"https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')}}"></script>  
+            <!-- //js -->	
+            <!-- start-smoth-scrolling-->
+
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                    });
+                });
+            </script>                               
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    /*
+                     var defaults = {
+                     containerID: 'toTop', // fading element id
+                     containerHoverID: 'toTopHover', // fading element hover id
+                     scrollSpeed: 1200,
+                     easingType: 'linear' 
+                     };
+                     */
+
+                    $().UItoTop({easingType: 'easeOutQuart'});
+
+                });
+            </script>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    /*
+                     var defaults = {
+                     containerID: 'toTop', // fading element id
+                     containerHoverID: 'toTopHover', // fading element hover id
+                     scrollSpeed: 1200,
+                     easingType: 'linear' 
+                     };
+                     */
+
+                    $().UItoTop({easingType: 'easeOutQuart'});
+
+                });
+            </script>
+
+
+            <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                    });
+                });
+            </script>               
+
+
+        {% endblock %}
+
+
+
+
+    </body>
+{%endblock content %}   
+</html>

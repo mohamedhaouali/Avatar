@@ -1,0 +1,227 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+
+    <!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+    -->
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Avatar Travel Agency</title>
+
+            <!-- Custom Theme files -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="keywords" content="Excursion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+                  Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+            <!--//end-smoth-scrolling-->
+        </head>
+        <body>
+
+
+
+
+            <div class="header">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand"><img src="{{asset('templates/images/image2.png')}}" alt=""></a>
+
+                        <br>
+                        <br>
+                        <br>
+                    </div>	
+
+                </div>	
+            </div>
+
+
+            <div class="container">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+
+                    </div>
+
+                </div>   
+      
+                <div class="row">
+
+                    <div class="col-md-9">
+
+                        {% for hotel in hotels %}     
+
+                            <div class="row">
+
+                                <div class="col-sm-4 col-lg-4 col-md-4">
+                                    <div class="thumbnail">
+                                        <img src="{{asset('uploads/'~hotel.path)}}" alt="">
+                                        <div class="caption">
+                                            <h4 class="pull-right">{{ hotel.prix }}</h4>
+                                            <h4><a href="#">{{ hotel.titre }}</a>
+                                            </h4>
+                                            <p>{{ hotel.description }}</a>.</p>
+                                        </div>
+
+
+
+                                        <div class="ratings">
+                                            <p class="pull-right">view {{hotel.notif}}</p>
+                                            <p>
+                                                {% if hotel.notif >=5 %}}
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                {% endif %}
+                                                {% if hotel.notif >=10 %}}
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                {% endif %}
+                                                {% if hotel.notif >=15 %}}
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                {% endif %}
+                                                {% if hotel.notif >=20 %}}
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                {% endif %}
+                                                {% if hotel.notif >=25 %}}
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                {% endif %}
+                                            </p>
+                                            <p>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}        
+
+
+
+                        </div>
+
+
+                    </div>      
+
+                </div>
+
+                <!-- /.container -->
+
+                <div class="container">
+                    <div class="footer">
+                        <div class="container">
+                            <div class="col-md-2 about">
+
+                                <h3>Liens</h3>
+
+
+                                <li><a href="{{path('acceuil')}}">Acceuil</a></li>
+                                <li><a href="#">Hotel</a></li>
+                                <li><a href="{{path('casa')}}">Voyages</a></li>
+                                <li><a href="{{path('vol_index')}}">Billeterie</a></li> 
+                                <li><a href="{{path('omra1')}}">Omra</a></li> 
+                                <li><a href="{{path('galerie')}}">Gallerie</a></li> 
+                                <li><a href="{{path('contact')}}">Contact</a></li>
+
+
+
+                                </ul>
+
+                            </div>   
+
+
+                            <div class="col-md-3 about">
+
+                                <h3>Voyages</h3>
+
+                                <li><a href="{{path('belgrade')}}">Belgrade / ZLATIBOR</a></li>
+                                <li><a href="{{path('prague')}}">PRAGUE/VIENNE/BRATISLAVA</a></li>
+                                <li><a href="{{path('barcelone')}}">BARCELONE MARS 2019 </a></li>
+                                <li><a href="{{path('beyrouth')}}">BEYROUTH</a></li>
+                                <li><a href="{{path('portugal')}}">PORTUGAL</a></li>
+                                <li><a href="{{path('nice')}}">NICE/CANNES/MONNACO</a></li>
+
+                            </div>
+
+                            <div class="col-md-3 about">
+
+
+                                <li><a href="{{path('inde')}}">INDE ET ISTANBUL</a></li>
+                                <li><a href="{{path('rome')}}">ROME/FLORENCE/PISE/VENISE</a></li>
+                                <li><a href="{{path('paris')}}">PARIS MARS 2019</a></li>
+                                <li><a href="{{path('madrid')}}">MADRID ANDALOUSIE COSTA DEL SOL </a></li>
+                                <li><a href="{{path('bruxelle')}}">PARIS / BRUXELLES / AMSTERDAM</a></li>
+                                <li><a href="{{path('casa')}}">CASABLANCA /RABAT / MARRAKECH </a></li>
+
+                            </div>
+
+
+                            <div class="col-md-3 address">
+                                <h3>Adresse</h3>
+
+                                <ul>
+                                    <li><span></span>  APP 9 Residence el Hakim Av de paris Ben Arous</li>
+                                    <li><span class="ph-no"></span>(+216) 79 391 087 <br>
+                                        (+216) 79 391 088 </li>
+                                    <li><span class="mail"></span><a href="mailto:example@mail.com">avatar.voyage@gmail.com</a></li>
+                                </ul>
+                            </div>	
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>           
+                    <div class="copy-right">
+                        <div class="container">
+                            <p>Copyright © 2019 MicroSystemSolutions. All rights reserved </p>
+                        </div>
+                    </div>
+                    <!--smooth-scrolling-of-move-up-->
+
+                    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+                    <!--//smooth-scrolling-of-move-up-->
+                    <!-- Bootstrap core JavaScript
+                ================================================== -->
+                    <!-- Placed at the end of the document so the pages load faster -->
+
+
+
+                </div>
+                <!-- /.container --> 
+
+
+
+
+
+                <script src="{{asset('templates1/js/jquery.js')}}"></script>
+
+                <!-- Bootstrap Core JavaScript -->
+                <script src="{{asset('templates1/js/bootstrap.min.js')}}"></script>
+
+                <script src="{{ asset('bundles/gestionprojet/ckeditor/ckeditor.js') }}"></script>
+
+
+
+
+
+        </body>
+    </html>                                            
+
+
+
+
+
+
+
+{%endblock  %}
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    
+
+  <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Chambres</p>
+            <div class="list-group">
+                <a href="{{path('chambre_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('chambre_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+    
+ <div class="col-md-5">
+  
+
+     <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+
+                <th>Dateentree</th>
+                <th>Datesortie</th>
+                <th>Nombrechambre</th>
+                <th>Typechambre</th>
+                <th>Arrangement</th>
+                <th>Nombreadulte</th>
+                <th>Nombreenfants</th>
+                <th>Nombrebebes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+         {% for chambre in chambres %}
+            <tr>
+               
+                <td>{% if chambre.dateentree %}{{ chambre.dateentree|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if chambre.datesortie %}{{ chambre.datesortie|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ chambre.nombrechambre }}</td>
+                <td>{{ chambre.typechambre }}</td>
+                <td>{{ chambre.arrangement }}</td>
+                <td>{{ chambre.nombreadulte }}</td>
+                <td>{{ chambre.nombreenfants }}</td>
+                <td>{{ chambre.nombrebebes }}</td>
+                  
+                
+                <td>
+                    
+     <ul>
+                        <li>
+                            <a href="{{ path('chambre_show', { 'id': chambre.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('chambre_edit', { 'id': chambre.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>                 
+                
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+       </div>    
+    </div>
+{% endblock A %}  
+
+
+
+
+

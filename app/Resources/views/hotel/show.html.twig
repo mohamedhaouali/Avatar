@@ -1,0 +1,102 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Bateaux</p>
+            <div class="list-group">
+                <a href="{{path('hotel_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('hotel_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('hotel_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-5">
+            <h1>Hotel</h1>
+
+            <table class ="table table-striped" >
+                <tbody>
+
+            <tr>
+                <th>Id</th>
+                <td>{{ hotel.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ hotel.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ hotel.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ hotel.prix }}</td>
+            </tr>
+            <tr>
+                <th>Notif</th>
+                <td>{{ hotel.notif }}</td>
+            </tr>
+            
+              <tr>
+                <th>Image</th>
+                <td> <img src="{{asset('uploads/'~hotel.path)}}" alt="DevAndClick" width="300" height="300"></td>
+            </tr>
+              
+              <tr>
+                <th>Path</th>
+                <td> <p><a href="{{ hotel.path1 }}"class="btn btn-info" ></span>Voir les condition</a></p> <br></td>
+            </tr>
+            
+              <td>   </td>
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    {#{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }#}
+                </li>
+            </ul>
+
+        </div>    
+    </div>
+{% endblock A %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+    -->
+    <!DOCTYPE HTML>
+    <html>
+        <head>
+            <title>Avatar Travel Agency</title>
+
+            <!-- Custom Theme files -->
+            <title>Avatar Travel Agency</title>
+
+            <!-- Custom Theme files -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="keywords" content="Excursion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+                  Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+            <!--//end-smoth-scrolling-->
+
+
+
+            <!-- Custom Theme files -->
+            <link href="{{asset('templates2/css/style.css')}}" rel='stylesheet' type='text/css' />	
+
+            <!--webfonts-->
+            <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+            <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,600' rel='stylesheet' type='text/css'>
+            <!--//webfonts-->
+            <script type="text/javascript" src="{{asset('templates2/js/bootstrap.js')}}"></script>
+
+
+
+
+        <br>
+        <br>
+        <br>
+
+
+    </head>
+    <body>
+        <!-- banner -->
+
+        <!-- banner -->
+        <!-- single -->
+        <div class="single">
+            <div class="container">
+                  {% for hotel in hotels %}   
+                <div class="single-top">
+                    <div class="col-md-6 single-left">
+                        <a href="{{path('detail')}}"><img src="{{asset('uploads/'~hotel.path)}}"  class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="col-md-6 single-right">
+                        <h3><a href="{{path('detail')}}"></a></h3>
+                       <h5> <strong>{{ hotel.titre }}</strong> </h5>
+                        <p>{{ hotel.description }} </p>
+                        <h5> Prix : {{ hotel.prix }} DT</h5>
+                        <p><a href="{{ hotel.path1 }}"class="btn btn-warning popup-modal" ></span>Voir les conditions</a></p> <br>
+                       
+                        <h5> <a class="btn btn-danger" href="{{path('detailhotel')}}">Detail Hotel</a></h5>
+                       
+                        <div class="sinbt">
+                            <a class="hvr-shutter-in-horizontal" href="{{path('detail')}}">Tarif et reservation</a>
+                        </div>
+                    </div>
+                        
+                        <p>View:{{ hotel.notif }}</p>
+                    <div class="clearfix"> </div>
+                </div>
+                        
+                 {% endfor %}           
+           
+ {{ knp_pagination_render(hotels) }}          
+            </div>
+        </div>
+
+    
+
+    
+<div class="footer">
+		<div class="container">
+                    	<div class="col-md-2 about">
+			
+                            <h3>Liens</h3>
+                          
+                           
+                                    <li><a href="{{path('acceuil')}}">Acceuil</a></li>
+                                    <li><a href="#">Hotel</a></li>
+                                    <li><a href="{{path('casa')}}">Voyages</a></li>
+                                    <li><a href="{{path('vol_index')}}">Billeterie</a></li> 
+                                    <li><a href="{{path('omra1')}}">Omra</a></li> 
+                                    <li><a href="{{path('galerie')}}">Gallerie</a></li> 
+                                    <li><a href="{{path('contact')}}">Contact</a></li>
+                              
+
+                              
+                            </ul>
+                        	
+			</div>   
+                    
+                    
+			<div class="col-md-3 about">
+			
+                            <h3>Voyages</h3>
+
+                                        <li><a href="{{path('belgrade')}}">Belgrade / ZLATIBOR</a></li>
+                                        <li><a href="{{path('prague')}}">PRAGUE/VIENNE/BRATISLAVA</a></li>
+                                        <li><a href="{{path('barcelone')}}">BARCELONE MARS 2019 </a></li>
+                                        <li><a href="{{path('beyrouth')}}">BEYROUTH</a></li>
+                                        <li><a href="{{path('portugal')}}">PORTUGAL</a></li>
+                                        <li><a href="{{path('nice')}}">NICE/CANNES/MONNACO</a></li>
+                                 
+			</div>
+                    
+                 	<div class="col-md-3 about">
+			
+    
+                                        <li><a href="{{path('inde')}}">INDE ET ISTANBUL</a></li>
+                                        <li><a href="{{path('rome')}}">ROME/FLORENCE/PISE/VENISE</a></li>
+                                        <li><a href="{{path('paris')}}">PARIS MARS 2019</a></li>
+                                        <li><a href="{{path('madrid')}}">MADRID ANDALOUSIE COSTA DEL SOL </a></li>
+                                        <li><a href="{{path('bruxelle')}}">PARIS / BRUXELLES / AMSTERDAM</a></li>
+                                        <li><a href="{{path('casa')}}">CASABLANCA /RABAT / MARRAKECH </a></li>
+
+			</div>
+                                        
+                            
+			<div class="col-md-3 address">
+				<h3>Adresse</h3>
+				
+				<ul>
+					<li><span></span>  APP 9 Residence el Hakim Av de paris Ben Arous</li>
+					<li><span class="ph-no"></span>(+216) 79 391 087 <br>
+                                    (+216) 79 391 088 </li>
+					<li><span class="mail"></span><a href="mailto:example@mail.com">avatar.voyage@gmail.com</a></li>
+				</ul>
+			</div>	
+		
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="copy-right">
+		<div class="container">
+			<p>Copyright © 2019 MicroSystemSolutions. All rights reserved </p>
+		</div>
+	</div>
+	<!--smooth-scrolling-of-move-up-->
+	
+		<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+{%endblock  %}	  

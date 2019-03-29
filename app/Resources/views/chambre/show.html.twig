@@ -1,0 +1,85 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+     <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Chambres</p>
+            <div class="list-group">
+                <a href="{{path('chambre_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('chambre_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('chambre_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>  
+ <div class="col-md-5">
+    <h1>Chambre</h1>  
+
+  <table class="table table-striped table-hover">
+        <tbody>
+          
+            <tr>
+                <th>Dateentree</th>
+                <td>{% if chambre.dateentree %}{{ chambre.dateentree|date("m/d/Y") }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datesortie</th>
+                <td>{% if chambre.datesortie %}{{ chambre.datesortie|date("m/d/Y") }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nombrechambre</th>
+                <td>{{ chambre.nombrechambre }}</td>
+            </tr>
+            <tr>
+                <th>Typechambre</th>
+                <td>{{ chambre.typechambre }}</td>
+            </tr>
+            <tr>
+                <th>Arrangement</th>
+                <td>{{ chambre.arrangement }}</td>
+            </tr>
+            <tr>
+                <th>Nombreadulte</th>
+                <td>{{ chambre.nombreadulte }}</td>
+            </tr>
+            <tr>
+                <th>Nombreenfants</th>
+                <td>{{ chambre.nombreenfants }}</td>
+            </tr>
+            <tr>
+                <th>Nombrebebes</th>
+                <td>{{ chambre.nombrebebes }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('chambre_modifier') }}"class="btn btn-info">Retour a la page Modifier</a>
+        </li>
+        <li>
+            <a href="{{ path('chambre_edit', { 'id': chambre.id }) }}" class="btn btn-success">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" class="btn btn-danger" value="Supprimer" />
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+  
+        </div>    
+    </div>
+{% endblock A %}           
+            
+            
+
+
+
+
+
+
+
+
+
+
+

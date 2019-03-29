@@ -1,0 +1,28 @@
+civilite_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Civilite:index" }
+    methods:  GET
+
+civilite_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Civilite:show" }
+    methods:  GET
+
+civilite_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Civilite:new" }
+    methods:  [GET, POST]
+
+civilite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Civilite:edit" }
+    methods:  [GET, POST]
+
+civilite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Civilite:delete" }
+    methods:  DELETE
+    
+civilite_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Civilite:modifier" }    

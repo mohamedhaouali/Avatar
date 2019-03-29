@@ -1,0 +1,92 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Vols</p>
+            <div class="list-group">
+                <a href="{{path('vol_new')}}"class="list-group-item">Ajouter</a>
+                <a href="{{path('vol_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Typevol</th>
+                        <th>Datedepart</th>
+                        <th>Civilite</th>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th>Aeroportdedepart</th>
+                        <th>Aeroportdarrive</th>
+                        <th>Classe</th>
+                        <th>Nombreadultes</th>
+                        <th>Nombreenfant</th>
+                        <th>Nombrebebes</th>
+                        <th>Observation</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vol in vols %}
+                        <tr>
+
+                      
+                      
+                            <td>{% if vol.typevol %}<font color="green">Aller Simple</font>{% else %}<font color="red">Aller/Retour</font>{% endif %}</td>
+                            <td>{% if vol.datedepart %}{{ vol.datedepart|date('Y-m-d') }}{% endif %}</td>
+                            <td>{{ vol.civilite }}</td>
+                            <td>{{ vol.prenom }}</td>
+                            <td>{{ vol.nom }}</td>
+                            <td>{{ vol.email }}</td>
+                            <td>{{ vol.telephone }}</td>
+                            <td>{{ vol.aeroportdedepart }}</td>
+                            <td>{{ vol.aeroportdarrive }}</td>
+                            <td>{{ vol.classe }}</td>
+                            <td>{{ vol.nombreadultes }}</td>
+                            <td>{{ vol.nombreenfant }}</td>
+                            <td>{{ vol.nombrebebes }}</td>
+                            <td>{{ vol.observation }}</td>
+
+
+
+
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('vol_edit', { 'id': vol.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span>   modifier</a>
+                                    </li>
+                                
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+
+        </div>    
+    </div>
+{% endblock A %}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

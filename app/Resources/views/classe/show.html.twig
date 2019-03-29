@@ -1,0 +1,79 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des  classes</p>
+            <div class="list-group">
+                <a href="{{path('classe_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('classe_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-5">
+            <h1>Classe</h1>
+
+            <table class ="table table-striped" >
+                <tbody>
+
+
+             
+            <tr>
+                <th>Nom</th>
+                <td>{{ classe.classe }}</td>
+            </tr>
+
+
+             
+
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    {#{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }#}
+                </li>
+            </ul>
+
+        </div>    
+    </div>
+{% endblock A %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

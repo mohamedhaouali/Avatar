@@ -1,0 +1,62 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Civilite</p>
+            <div class="list-group">
+                <a href="{{path('civilite_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('civilite_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('civilite_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-5">
+            <h1>Civilite</h1>
+
+            <table class ="table table-striped" >
+                <tbody>
+
+
+             
+            <tr>
+                <th>Titre</th>
+                <td>{{ civilite.civilite }}</td>
+            </tr>
+
+
+             
+
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    {#{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }#}
+                </li>
+            </ul>
+
+        </div>    
+    </div>
+{% endblock A %}   
+
+
+
+
+
+
+
+
+
+
+

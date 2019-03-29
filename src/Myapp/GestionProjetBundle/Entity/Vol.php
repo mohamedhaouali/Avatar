@@ -1,0 +1,543 @@
+<?php
+
+namespace Myapp\GestionProjetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+
+
+/**
+ * Vol
+ *
+ * @ORM\Table(name="vol")
+ * @ORM\Entity(repositoryClass="Myapp\GestionProjetBundle\Repository\VolRepository")
+ */
+class Vol
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typevol", type="string", length=255)
+     */
+    private $typevol;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datedepart", type="date")
+     */
+    private $datedepart;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
+     * 
+     * * *  *  * * *
+     * @Assert\NotBlank(message="entrer votre prenom.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=30,
+     *     minMessage="Le prenom est trop court.",
+                           
+     *     maxMessage="le prenom est trop  long.",
+     *     
+     * )
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * *  *  * * *
+     * @Assert\NotBlank(message="entrer votre nom.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=30,
+     *     minMessage="Le nom est trop court.",
+                           
+     *     maxMessage="le nom est trop  long.",
+     *     
+     * )
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     * 
+     *   @Assert\NotBlank(message="entrer votre mail.", groups={"Registration", "Profile"})
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aeroportdedepart", type="string", length=255)
+     */
+    private $aeroportdedepart;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aeroportdarrive", type="string", length=255)
+     */
+    private $aeroportdarrive;
+
+  
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nombreadultes", type="integer")
+     *     @Assert\Range(
+     *      min = 0,
+     *      max = 10,
+     *      minMessage = "le nombre ne peut pas etre au moins {{ 0 }} pour entrer",
+     
+     *      maxMessage = "le nombre ne peut pas etre plus {{ 10 }}cm to enter"
+     *   
+     * )
+       */
+     private $nombreadultes;
+  
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nombreenfant", type="integer")
+     * 
+    
+     */
+    private $nombreenfant;
+
+   
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nombrebebes", type="integer")
+     * 
+    
+     */
+    private $nombrebebes;
+
+    /**
+     * @var string
+     *
+     * 
+     * @ORM\Column(name="observation", type="text")
+     * 
+    
+     */
+    private $observation;
+    
+  
+    /**
+     * @ORM\ManyToOne(targetEntity="Classe", cascade={"remove"})
+     * @ORM\JoinColumn(name="classe_id", referencedColumnName="id", onDelete="SET NULL")}
+     * @Assert\NotBlank()
+     */
+    private $classe;
+    
+     /**
+     * @ORM\ManyToOne(targetEntity="Civilite", cascade={"remove"})
+     * @ORM\JoinColumn(name="civilite_id", referencedColumnName="id", onDelete="SET NULL")}
+     * @Assert\NotBlank()
+     */
+    private $civilite; 
+    
+    
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set typevol
+     *
+     * @param string $typevol
+     *
+     * @return Vol
+     */
+    public function setTypevol($typevol)
+    {
+        $this->typevol = $typevol;
+
+        return $this;
+    }
+
+    /**
+     * Get typevol
+     *
+     * @return string
+     */
+    public function getTypevol()
+    {
+        return $this->typevol;
+    }
+
+    /**
+     * Set datedepart
+     *
+     * @param \DateTime $datedepart
+     *
+     * @return Vol
+     */
+    public function setDatedepart($datedepart)
+    {
+        $this->datedepart = $datedepart;
+
+        return $this;
+    }
+
+    /**
+     * Get datedepart
+     *
+     * @return \DateTime
+     */
+    public function getDatedepart()
+    {
+        return $this->datedepart;
+    }
+
+    
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return Vol
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Vol
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Vol
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return Vol
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set aeroportdedepart
+     *
+     * @param string $aeroportdedepart
+     *
+     * @return Vol
+     */
+    public function setAeroportdedepart($aeroportdedepart)
+    {
+        $this->aeroportdedepart = $aeroportdedepart;
+
+        return $this;
+    }
+
+    /**
+     * Get aeroportdedepart
+     *
+     * @return string
+     */
+    public function getAeroportdedepart()
+    {
+        return $this->aeroportdedepart;
+    }
+
+    /**
+     * Set aeroportdarrive
+     *
+     * @param string $aeroportdarrive
+     *
+     * @return Vol
+     */
+    public function setAeroportdarrive($aeroportdarrive)
+    {
+        $this->aeroportdarrive = $aeroportdarrive;
+
+        return $this;
+    }
+
+    /**
+     * Get aeroportdarrive
+     *
+     * @return string
+     */
+    public function getAeroportdarrive()
+    {
+        return $this->aeroportdarrive;
+    }
+
+    
+
+
+   
+    /**
+     * Set observation
+     *
+     * @param string $observation
+     *
+     * @return Vol
+     */
+    public function setObservation($observation)
+    {
+        $this->observation = $observation;
+
+        return $this;
+    }
+
+    /**
+     * Get observation
+     *
+     * @return string
+     */
+    public function getObservation()
+    {
+        return $this->observation;
+    }
+
+   
+
+
+    
+
+ public function __toString(){
+        // to show the name of the Category in the select
+        return $this->classe.' '.$this->civilite;
+        // to show the id of the Category in the select
+        // return $this->id;
+    }
+    
+   
+    
+
+
+    /**
+     * Set classe
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\Classe $classe
+     *
+     * @return Vol
+     */
+    public function setClasse(\Myapp\GestionProjetBundle\Entity\Classe $classe = null)
+    {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    /**
+     * Get classe
+     *
+     * @return \Myapp\GestionProjetBundle\Entity\Classe
+     */
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    /**
+     * Set civilite
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\Civilite $civilite
+     *
+     * @return Vol
+     */
+    public function setCivilite(\Myapp\GestionProjetBundle\Entity\Civilite $civilite = null)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    /**
+     * Get civilite
+     *
+     * @return \Myapp\GestionProjetBundle\Entity\Civilite
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
+
+    /**
+     * Set nombreadultes
+     *
+     * @param integer $nombreadultes
+     *
+     * @return Vol
+     */
+    public function setNombreadultes($nombreadultes)
+    {
+        $this->nombreadultes = $nombreadultes;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreadultes
+     *
+     * @return integer
+     */
+    public function getNombreadultes()
+    {
+        return $this->nombreadultes;
+    }
+
+    /**
+     * Set nombreenfant
+     *
+     * @param integer $nombreenfant
+     *
+     * @return Vol
+     */
+    public function setNombreenfant($nombreenfant)
+    {
+        $this->nombreenfant = $nombreenfant;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreenfant
+     *
+     * @return integer
+     */
+    public function getNombreenfant()
+    {
+        return $this->nombreenfant;
+    }
+
+    /**
+     * Set nombrebebes
+     *
+     * @param integer $nombrebebes
+     *
+     * @return Vol
+     */
+    public function setNombrebebes($nombrebebes)
+    {
+        $this->nombrebebes = $nombrebebes;
+
+        return $this;
+    }
+
+    /**
+     * Get nombrebebes
+     *
+     * @return integer
+     */
+    public function getNombrebebes()
+    {
+        return $this->nombrebebes;
+    }
+}

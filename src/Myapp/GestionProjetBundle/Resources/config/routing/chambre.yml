@@ -1,0 +1,28 @@
+chambre_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Chambre:index" }
+    methods:  GET
+
+chambre_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Chambre:show" }
+    methods:  GET
+
+chambre_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Chambre:new" }
+    methods:  [GET, POST]
+
+chambre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Chambre:edit" }
+    methods:  [GET, POST]
+
+chambre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Chambre:delete" }
+    methods:  DELETE
+    
+chambre_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Chambre:modifier" }     

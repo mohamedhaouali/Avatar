@@ -1,0 +1,562 @@
+<?php
+
+namespace Myapp\GestionProjetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+/**
+ * Bateaux
+ *
+ * @ORM\Table(name="bateaux")
+ * @ORM\Entity(repositoryClass="Myapp\GestionProjetBundle\Repository\bateauxRepository")
+ */
+class Bateaux
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typevol", type="string", length=255)
+     */
+    private $typevol;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datedepart", type="date")
+     */
+    private $datedepart;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="villededepart", type="string", length=255)
+     */
+    private $villededepart;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="villearrive", type="string", length=255)
+     */
+    private $villearrive;
+    
+      /**
+     * @var int
+     *
+     * @ORM\Column(name="seniors",type="integer")
+     */
+    private $seniors;
+    
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typecabine", type="string", length=255)
+     */
+    private $typecabine;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typevehicule", type="string", length=255)
+     */
+    private $typevehicule;
+
+      /**
+     * @var int
+     *
+     * @ORM\Column(name="adulte", type="integer")
+   
+     */
+    
+    private $adulte;
+
+
+    
+     /**
+     * @var int
+     *
+     * @ORM\Column(name="enfant", type="integer")
+     * 
+  
+     */
+    
+    private $enfant;
+
+  
+    
+        /**
+     * @var int
+     *
+     * @ORM\Column(name="bebe", type="integer")
+     * 
+  
+     */
+    
+    private $bebe;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nourissons", type="integer")
+     */
+    private $nourissons;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observation", type="text")
+     */
+    private $observation;
+
+     /**
+     * @ORM\ManyToOne(targetEntity="Civilite", cascade={"remove"})
+     * @ORM\JoinColumn(name="civilite_id", referencedColumnName="id", onDelete="SET NULL")}
+     * @Assert\NotBlank()
+     */
+    private $civilite; 
+    
+    
+    
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set typevol
+     *
+     * @param string $typevol
+     *
+     * @return bateaux
+     */
+    public function setTypevol($typevol)
+    {
+        $this->typevol = $typevol;
+
+        return $this;
+    }
+
+    /**
+     * Get typevol
+     *
+     * @return string
+     */
+    public function getTypevol()
+    {
+        return $this->typevol;
+    }
+
+    /**
+     * Set datedepart
+     *
+     * @param \DateTime $datedepart
+     *
+     * @return bateaux
+     */
+    public function setDatedepart($datedepart)
+    {
+        $this->datedepart = $datedepart;
+
+        return $this;
+    }
+
+    /**
+     * Get datedepart
+     *
+     * @return \DateTime
+     */
+    public function getDatedepart()
+    {
+        return $this->datedepart;
+    }
+
+    /**
+     * Set villededepart
+     *
+     * @param string $villededepart
+     *
+     * @return bateaux
+     */
+    public function setVillededepart($villededepart)
+    {
+        $this->villededepart = $villededepart;
+
+        return $this;
+    }
+
+    /**
+     * Get villededepart
+     *
+     * @return string
+     */
+    public function getVillededepart()
+    {
+        return $this->villededepart;
+    }
+
+    /**
+     * Set typecabine
+     *
+     * @param string $typecabine
+     *
+     * @return bateaux
+     */
+    public function setTypecabine($typecabine)
+    {
+        $this->typecabine = $typecabine;
+
+        return $this;
+    }
+
+    /**
+     * Get typecabine
+     *
+     * @return string
+     */
+    public function getTypecabine()
+    {
+        return $this->typecabine;
+    }
+
+    /**
+     * Set typevehicule
+     *
+     * @param string $typevehicule
+     *
+     * @return bateaux
+     */
+    public function setTypevehicule($typevehicule)
+    {
+        $this->typevehicule = $typevehicule;
+
+        return $this;
+    }
+
+    /**
+     * Get typevehicule
+     *
+     * @return string
+     */
+    public function getTypevehicule()
+    {
+        return $this->typevehicule;
+    }
+
+   
+   
+
+    
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return bateaux
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return bateaux
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return bateaux
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set observation
+     *
+     * @param string $observation
+     *
+     * @return bateaux
+     */
+    public function setObservation($observation)
+    {
+        $this->observation = $observation;
+
+        return $this;
+    }
+
+    /**
+     * Get observation
+     *
+     * @return string
+     */
+    public function getObservation()
+    {
+        return $this->observation;
+    }
+
+    /**
+     * Set villearrive
+     *
+     * @param string $villearrive
+     *
+     * @return Bateaux
+     */
+    public function setVillearrive($villearrive)
+    {
+        $this->villearrive = $villearrive;
+
+        return $this;
+    }
+
+    /**
+     * Get villearrive
+     *
+     * @return string
+     */
+    public function getVillearrive()
+    {
+        return $this->villearrive;
+    }
+
+   
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return Bateaux
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set civilite
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\Civilite $civilite
+     *
+     * @return Bateaux
+     */
+    public function setCivilite(\Myapp\GestionProjetBundle\Entity\Civilite $civilite = null)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    /**
+     * Get civilite
+     *
+     * @return \Myapp\GestionProjetBundle\Entity\Civilite
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
+
+    /**
+     * Set adulte
+     *
+     * @param integer $adulte
+     *
+     * @return Bateaux
+     */
+    public function setAdulte($adulte)
+    {
+        $this->adulte = $adulte;
+
+        return $this;
+    }
+
+    /**
+     * Get adulte
+     *
+     * @return integer
+     */
+    public function getAdulte()
+    {
+        return $this->adulte;
+    }
+
+    /**
+     * Set enfant
+     *
+     * @param integer $enfant
+     *
+     * @return Bateaux
+     */
+    public function setEnfant($enfant)
+    {
+        $this->enfant = $enfant;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant
+     *
+     * @return integer
+     */
+    public function getEnfant()
+    {
+        return $this->enfant;
+    }
+
+    /**
+     * Set bebe
+     *
+     * @param integer $bebe
+     *
+     * @return Bateaux
+     */
+    public function setBebe($bebe)
+    {
+        $this->bebe = $bebe;
+
+        return $this;
+    }
+
+    /**
+     * Get bebe
+     *
+     * @return integer
+     */
+    public function getBebe()
+    {
+        return $this->bebe;
+    }
+
+    /**
+     * Set nourissons
+     *
+     * @param integer $nourissons
+     *
+     * @return Bateaux
+     */
+    public function setNourissons($nourissons)
+    {
+        $this->nourissons = $nourissons;
+
+        return $this;
+    }
+
+    /**
+     * Get nourissons
+     *
+     * @return integer
+     */
+    public function getNourissons()
+    {
+        return $this->nourissons;
+    }
+}

@@ -1,0 +1,66 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Classes</p>
+            <div class="list-group">
+                <a href="{{path('classe_new')}}"class="list-group-item">Ajouter</a>
+                <a href="{{path('classe_modifier')}}" class="list-group-item">Modifier</a>
+               
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+                       
+                        <th>Classe</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      {% for classe in classes %}
+                        <tr>
+
+
+                         
+                            <td>{{ classe.classe }}</td>                   
+
+
+
+
+
+
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('classe_edit', { 'id': classe.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span>   modifier</a>
+                                    </li>
+                                   
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+
+        </div>    
+    </div>
+{% endblock A %}  
+
+
+
+
+
+
+
+
+
+

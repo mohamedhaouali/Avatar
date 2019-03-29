@@ -1,0 +1,85 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Voyages</p>
+            <div class="list-group">
+                <a href="{{path('voyage_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('voyage_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('voyage_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-5">
+            <h1>Voyage</h1>
+
+            <table class ="table table-striped" >
+                <tbody>
+
+         <tr>
+                <th>Id</th>
+                <td>{{ voyage.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ voyage.titre }}</td>
+            </tr>
+            <tr>
+                <th>Datedevoyage</th>
+                <td>{{ voyage.datedevoyage }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ voyage.prix }}</td>
+            </tr>   
+             
+     <tr>
+                <th>Path</th>
+                <td> <a href="{{ voyage.path1 }}" class="btn btn-primary hvr-rectangle-in">Lire la suite</a></td>
+            </tr>
+
+               <td>   </td>   
+
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    {#{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }#}
+                </li>
+            </ul>
+
+        </div>    
+    </div>
+{% endblock A %}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

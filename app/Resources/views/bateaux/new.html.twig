@@ -1,0 +1,385 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Avatar Travel Agency</title>
+ <!--//web-font-->
+            <!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Excursion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--//end-smoth-scrolling-->
+</head>
+
+    <div class="content_fullwidth less3">
+        <div class="container">
+
+            <br>
+            <br>
+
+
+            <form method="POST" name="clients" enctype="multipart/form-data"  id="myFormVol" class="cforms">        <div class="one_full">
+                    <div class="stcode_title4">
+                        <h3><span class="line"></span><span class="text"><strong>Traversée et infos cabine</strong></span></h3>
+                    </div>
+                </div>
+                <div class="one_full">
+                    <div class="one_full">	
+                        <div class="info-block" style="min-height: auto; padding-top: 15px; float: left">
+                            <div class="one_full">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="type_voyage">Type de traversée <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.typevol, { 'attr': {'class': 'form-control', 'placeholder': 'Type vol' } }) }}
+                                        {{ form_errors(form.typevol) }}
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Date départ  <span style="color:red;">(*)</span></label>
+                                        <div>
+                                            {{ form_widget(form.datedepart, { 'attr': {'class': 'form-control', 'placeholder': 'Date depart' } }) }}
+                                            {{ form_errors(form.datedepart) }}                                   
+
+                                        </div>
+
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+
+                            </div><div class="clearfix"></div>
+
+
+
+
+                            <div class="one_full">
+
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="port_depart">Port/Ville de départ <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.villededepart, { 'attr': {'class': 'form-control', 'placeholder': 'Port/Ville de départ' } }) }}
+                                        {{ form_errors(form.villededepart) }} 
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>               
+
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Port/Ville d'arrivée  <span style="color:red;">(*)</span></label>
+                                        <div>
+                                            {{ form_widget(form.villearrive, { 'attr': {'class': 'form-control', 'placeholder': 'Port/Ville d arrivée' } }) }}
+                                            {{ form_errors(form.villearrive) }}                  
+                                        </div>
+
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div> 
+
+
+
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label >Type Cabine <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.typecabine, { 'attr': {'class': 'form-control', 'placeholder': 'type cabine' } }) }}
+                                        {{ form_errors(form.typecabine) }}                     
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>   
+
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="marque_voiture">Type Véhicule</label>
+
+                                        {{ form_widget(form.typevehicule, { 'attr': {'class': 'form-control', 'placeholder': 'Type Véhicule' } }) }}
+                                        {{ form_errors(form.typevehicule) }}                     
+
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="one_full">
+                                <div id="dimensionn" style="display: none;">
+                                    <div class="one_fourth">
+                                        <div class="form-group">
+                                            <span style="    top: 33px;font-size: 11px;position: relative;"><b>Dimensions <small>(Largeur - Hauteur - Longueur)</small>  </b><span style="color:red;">(*)</span>
+
+                                            </span></div>
+                                    </div>
+                                    <div class="one_fourth">
+                                        <div class="form-group">
+                                            <label class="control-label" style="font-size: 11px;" for="dimension">Largeur<span style="color:red;">(*)</span></label>
+
+                                            <input type="text" name="largeur" id="largeur" class="form-control borderright valuestyle dimensionnn" placeholder="En mètre" value="">
+                                            <span class="help-block " style="margin-top: 5px;"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="one_fourth">
+                                        <div class="form-group">
+                                            <label class="control-label" style="font-size: 11px;" for="dimension">Hauteur<span style="color:red;">(*)</span></label>
+
+                                            <input type="text" name="hateur" id="hateur" class="form-control borderright valuestyle dimensionnn" placeholder="En mètre" value="">
+                                            <span class="help-block " style="margin-top: 5px;"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="one_fourth last">
+                                        <div class="form-group">
+                                            <label class="control-label" style="font-size: 11px;" for="dimension">Longeur<span style="color:red;">(*)</span></label>
+
+                                            <input type="text" name="longeur" id="longeur" class="form-control borderright valuestyle dimensionnn" placeholder="En mètre" value="">
+                                            <span class="help-block " style="margin-top: 5px;"></span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Adulte(s) <small>(16 à 60 ans non révolus)</small> <span style="color:red;">(*)</span></label>
+                                    {{ form_widget(form.adulte, { 'attr': {'class': 'form-control', 'placeholder': 'Adulte(s) (16 à 60 ans non révolus)' } }) }}
+                                    {{ form_errors(form.adulte) }}    
+                                    <span class="help-block " style="margin-top: 5px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="font-size: 10px;" for="nbEnfant">Enfant(s) <small>(2 à 16 ans non révolus)</small><span style="color:red;"> (*)</span></label>
+                                    {{ form_widget(form.enfant, { 'attr': {'class': 'form-control', 'placeholder': 'Enfant(s) (2 à 16 ans non révolus)' } }) }}
+                                    {{ form_errors(form.enfant) }}  
+                                    <span class="help-block " style="margin-top: 5px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="font-size: 10px;" for="nbBebe">Bébé(s)  <small>(1 à 2 ans non révolus)</small><span style="color:red;"> (*)</span></label>
+                                    {{ form_widget(form.bebe, { 'attr': {'class': 'form-control', 'placeholder': 'Bébé(s) (1 à 2 ans non révolus)' } }) }}
+                                    {{ form_errors(form.bebe) }}  
+                                    <span class="help-block " style="margin-top: 5px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="font-size: 10px;" for="nouriss">Nourrisson(s)  <small>(moins de 1 an)</small><span style="color:red;"> (*)</span></label>
+                                    {{ form_widget(form.nourissons, { 'attr': {'class': 'form-control', 'placeholder': 'Nourrisson(s)' } }) }}
+                                    {{ form_errors(form.nourissons) }} 
+                                    <span class="help-block " style="margin-top: 5px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" style="font-size: 10px;" for="senior">Seniors(s)  <small>(60 ans et +)</small><span style="color:red;"> (*)</span></label>
+                                    {{ form_widget(form.seniors, { 'attr': {'class': 'form-control', 'placeholder': 'Seniors(s) (60 ans et +) ' } }) }}
+                                    {{ form_errors(form.seniors) }} 
+                                    <span class="help-block " style="margin-top: 5px;"></span>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="one_full">
+                            <div class="one_full">
+                                <div class="stcode_title4" style="padding-top: 15px;">
+                                    <h3><span class="line"></span><span class="text"><strong>Coordonnées</strong></span></h3>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="one_full">
+                                <div class="col-md-3" >
+                                    <div class="form-group">
+                                        <label>Civilite  <span style="color:red;">(*)</span></label>
+
+                                        {{ form_widget(form.civilite, { 'attr': {'class': 'form-control', 'placeholder': 'Civilite' } }) }}
+                                        {{ form_errors(form.civilite) }}
+
+
+
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="prenom_client">Prénom <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder': 'Prénom ' } }) }}
+                                        {{ form_errors(form.prenom) }} 
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="nom_client">Nom <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom ' } }) }}
+                                        {{ form_errors(form.nom) }} 
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="email">Email <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email ' } }) }}
+                                        {{ form_errors(form.email) }}
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" style="font-size: 11px;" for="telephone">Téléphone <span style="color:red;">(*)</span></label>
+                                        {{ form_widget(form.telephone, { 'attr': {'class': 'form-control', 'placeholder': 'Téléphone ' } }) }}
+                                        {{ form_errors(form.telephone) }}
+                                        <span class="help-block " style="margin-top: 5px;"></span>
+                                    </div>
+                                </div> 
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="clearfix"></div>
+                <div class="one_full">
+                    <div class="stcode_title4">
+                        <h3><span class="line"></span><span class="text"><strong>Observation(s)</strong></span></h3>
+                    </div>
+
+                </div>
+                <div class="one_full">
+                    <div class="one_full">	
+                        <div class="info-block" style="min-height: auto; padding-top: 15px">
+                            <div class="one_full">
+                                <div class="form-group">
+
+                                    {{ form_widget(form.observation, { 'attr': {'class': 'form-control', 'placeholder': 'Observation(s)' } }) }}
+                                    {{ form_errors(form.observation) }}               
+                                    <span class="help-block " style="margin-top: 5px;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div><span style="color:red;">(*)</span> Champ Obligatoire.</div>
+                <div class="clearfix" style="float:right !important;">
+                    <input type="submit" class="btn btn-success" value="Envoyer" >
+
+                </div>
+                <div class="col-md-1"></div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center" style="margin-top: 40px;">
+                    {{ form_rest(form) }}
+                    <!-- end section -->
+                </div>
+                <div>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="col-md-2 about">
+
+            <h3>Liens</h3>
+
+
+            <li><a href="{{path('acceuil')}}">Acceuil</a></li>
+            <li><a href="#">Hotel</a></li>
+            <li><a href="{{path('casa')}}">Voyages</a></li>
+            <li><a href="{{path('vol_index')}}">Billeterie</a></li> 
+            <li><a href="{{path('omra1')}}">Omra</a></li> 
+            <li><a href="{{path('galerie')}}">Gallerie</a></li> 
+            <li><a href="{{path('contact')}}">Contact</a></li>
+
+
+
+            </ul>
+
+        </div>   
+
+
+        <div class="col-md-3 about">
+
+            <h3>Voyages</h3>
+
+            <li><a href="{{path('belgrade')}}">Belgrade / ZLATIBOR</a></li>
+            <li><a href="{{path('prague')}}">PRAGUE/VIENNE/BRATISLAVA</a></li>
+            <li><a href="{{path('barcelone')}}">BARCELONE MARS 2019 </a></li>
+            <li><a href="{{path('beyrouth')}}">BEYROUTH</a></li>
+            <li><a href="{{path('portugal')}}">PORTUGAL</a></li>
+            <li><a href="{{path('nice')}}">NICE/CANNES/MONNACO</a></li>
+
+        </div>
+
+        <div class="col-md-3 about">
+
+
+            <li><a href="{{path('inde')}}">INDE ET ISTANBUL</a></li>
+            <li><a href="{{path('rome')}}">ROME/FLORENCE/PISE/VENISE</a></li>
+            <li><a href="{{path('paris')}}">PARIS MARS 2019</a></li>
+            <li><a href="{{path('madrid')}}">MADRID ANDALOUSIE COSTA DEL SOL </a></li>
+            <li><a href="{{path('bruxelle')}}">PARIS / BRUXELLES / AMSTERDAM</a></li>
+            <li><a href="{{path('casa')}}">CASABLANCA /RABAT / MARRAKECH </a></li>
+
+        </div>
+
+
+        <div class="col-md-3 address">
+            <h3>Adresse</h3>
+
+            <ul>
+                <li><span></span>  APP 9 Residence el Hakim Av de paris Ben Arous</li>
+                <li><span class="ph-no"></span>(+216) 79 391 087 <br>
+                    (+216) 79 391 088 </li>
+                <li><span class="mail"></span><a href="mailto:example@mail.com">avatar.voyage@gmail.com</a></li>
+            </ul>
+        </div>	
+
+        <div class="clearfix"> </div>
+    </div>
+</div>	
+<div class="copy-right">
+    <div class="container">
+        <p>Copyright © 2019 MicroSystemSolutions. All rights reserved </p>
+    </div>
+</div>
+<!--smooth-scrolling-of-move-up-->
+
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!--//smooth-scrolling-of-move-up-->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>
+{%endblock  %}	     

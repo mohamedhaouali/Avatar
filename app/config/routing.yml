@@ -1,0 +1,46 @@
+gestion_projet:
+    resource: "@GestionProjetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+utilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+back:
+    resource: "@BackBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+vol:
+    resource: "@GestionProjetBundle/Resources/config/routing/vol.yml"
+    prefix:   /vol 
+    
+civilite:
+        resource: "@GestionProjetBundle/Resources/config/routing/civilite.yml"
+        prefix:   /civilite    
+
+classe:
+        resource: "@GestionProjetBundle/Resources/config/routing/classe.yml"
+        prefix:   /classe
+        
+bateaux:
+        resource: "@GestionProjetBundle/Resources/config/routing/bateaux.yml"
+        prefix:   /bateaux   
+        
+hotel:
+        resource: "@GestionProjetBundle/Resources/config/routing/hotel.yml"
+        prefix:   /hotel   
+        
+voyage:
+        resource: "@GestionProjetBundle/Resources/config/routing/voyage.yml"
+        prefix:   /voyage        
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+    
+chambre:
+        resource: "@GestionProjetBundle/Resources/config/routing/chambre.yml"
+        prefix:   /chambre
+    

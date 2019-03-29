@@ -1,0 +1,82 @@
+{% extends "BackBundle::base.html.twig" %}
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des hotels</p>
+            <div class="list-group">
+                <a href="{{path('hotel_new')}}"class="list-group-item">Ajouter</a>
+                <a href="{{path('hotel_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="{{path('hotel_index')}}" class="list-group-item">Afficher</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <table class ="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                         <th>Path</th>
+                        <th>Notif</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hotel in hotels %}
+                        <tr>
+
+                           
+                            <td>{{ hotel.titre }}</td>
+                            <td>{{ hotel.description }}</td>
+                            <td>{{ hotel.prix }}</td>
+                            <td>  <p><a href="{{ hotel.path1 }}"class="btn btn-info" ></span>Voir les condition</a></p> <br> </td>
+                            <td>{{ hotel.notif }}</td>
+                            <td>  <img src="{{asset('uploads/'~hotel.path)}}" alt="DevAndClick"  width="300" height="300" ></td>    
+
+
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('hotel_edit', { 'id': hotel.id})}}" class="btn btn-info" ><span class="glyphicon glyphicon-edit"></span>Modifier</a>
+                                    </li>
+
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+
+        </div>    
+    </div>
+{% endblock A %}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

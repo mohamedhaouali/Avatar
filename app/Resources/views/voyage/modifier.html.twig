@@ -1,0 +1,50 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+    {% block A %}
+    <h1>Voyages list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+               
+                <th>Titre</th>
+                 <th>Image</th>
+                <th>Datedevoyage</th>
+                <th>Prix</th>
+                <th>Path</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for voyage in voyages %}
+            <tr>
+                
+                <td>{{ voyage.titre }}</td>
+                <td>  <img src="{{asset('uploads/'~voyage.path)}}"  width="300" height="300" alt="DevAndClick" ></td>    
+                <td>{{ voyage.datedevoyage }}</td>
+                <td>{{ voyage.prix }}</td>
+                <td>  <a href="{{ voyage.path1 }}" class="btn btn-primary hvr-rectangle-in">Lire la suite</a> </td>  
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('voyage_show', { 'id': voyage.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('voyage_edit', { 'id': voyage.id }) }}"  class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('voyage_new') }}" class="btn btn-success">Ajout d'un voyage</a>
+        </li>
+        </li>
+    </ul>
+
+{% endblock A %}          

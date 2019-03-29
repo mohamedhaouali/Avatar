@@ -1,0 +1,255 @@
+{% extends '::base.html.twig'%}
+
+ 
+{% block body %}
+
+<div class="site_wrapper">
+
+  
+
+      
+
+
+<div class="clearfix"></div>
+
+
+
+
+
+
+            
+<style>
+    #test{
+    animation: Test 1s infinite;
+}
+@keyframes Test{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+</style>
+
+<div class="clearfix"></div>
+
+
+<div class="container">
+    <div class="row featured_section ">
+        <div class="col-lg-24 col-md-24 col-xs-24">
+            <div class="logregform two reservation">
+                
+
+
+
+                <div class="feildcont">
+                 
+                    <div class="divider_line2"></div>
+                    <form role="form" action="/tarifetdispo" method="post" id="MyForm" name="MyForm">
+                        <div class="row">
+
+                            <div class="col-md-24">
+                                <legend>Date de séjours :</legend>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Date entrée <em>*</em></label>
+                                <!--<input type="text" class="date-input-css" name="datedu" id="datedu" data-provide="datepicker" placeholder="JJ/MM/AAAA" value="" />-->
+                                <div class="input-group date" id="datetimepicker_checkin">
+                                    <input type="text" class="form-control inputcal-form-interne" name="datedu" id="datedu" placeholder="JJ/MM/AAAA" value="26-03-2019">
+                                    <span class="input-group-addon"> <i class="fa fa-calendar fa-grean"></i> </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Date sortie <em>*</em></label>
+                                <!--<input type="text" class="date-input-css" name="dateau" id="dateau" data-provide="datepicker" placeholder="JJ/MM/AAAA" value="" />-->
+                                <div class="input-group date" id="datetimepicker_checkout">
+                                    <input type="text" class="form-control inputcal-form-interne" name="dateau" id="dateau" placeholder="JJ/MM/AAAA" value="27-03-2019">
+                                    <span class="input-group-addon"> <i class="fa fa-calendar fa-grean"></i> </span>
+                                </div>
+                            </div>
+
+                         
+                            <div class="col-md-4">
+                                <label>Nombre de chambre</label>
+                                <div class="input-group number-spinner">
+                                    <span class="input-group-btn data-dwn">
+                                        <button type="button" class="btn btn-gray" data-dir="dwn" id="supprimerChambre"><span class="glyphicon glyphicon-minus"></span></button>
+                                    </span>
+                                    <input type="text" readonly="readonly" id="nbChambre" class="form-control" style="text-align: center; font-size: 14px;" name="nbChambre" value="1">
+                                    <span class="input-group-btn data-up">
+                                        <button type="button" class="btn btn-gray" data-dir="up" id="ajouterChambre"><span class="glyphicon glyphicon-plus"></span></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 17px;">
+                                <a id="conditions" href="#condition-modal" class="btn btn-warning popup-modal">Voir les conditions</a>
+                            </div>
+                        </div>
+                        <div class="divider_line2"></div>
+
+                        <div class="row">
+                            <div class="col-md-24">
+                                <legend>Choisir type &amp; nombre de chambre :</legend>
+                            </div>
+                        </div>
+                        <div class="clearfix margin_top1"></div>
+
+
+                        <div id="detail-chambre-handler" class="row">
+                            
+<div id="zone-moteur1" class="col-md-12 col-sm-24 col-xs-24 item-chambre " style="    margin-bottom: 15px;clear: both;">
+    <div class="one_full">
+        <div class="width70">
+            <div class="nbchambre">Chambre  N° 1</div>
+        </div>
+        <div class="width30" id="price-panel1">
+            <div class="prixchambre">
+                <input type="hidden" name="prix_chambre" id="prix_chambre" value="0">
+                                <span style="font-size: 16px;">0 TND</span>            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <input type="hidden" name="MinOccupChambre1" id="MinOccupChambre1" value="">    
+    <input type="hidden" name="MaxOccupChambre1" id="MaxOccupChambre1" value="">    
+    <div class="clearfix hotel-room ch1" style="position: relative;">
+        <!--<h3>Chambre N° 
+             <span class="button ten-2" id="price-panel">
+                         
+             </span>
+         </h3> -->
+        <div class="clearfix margin_top1"></div>
+        <div class="col-md-12 col-sm-6 col-xs-24">
+            <div class="titre-formrech">Type Chambre </div>
+            <select class="form-control select-form " title="typechambre" id="typechambre1" name="typechambre1">
+            <option value="0" selected="selected">Chambre Standard</option>
+    </select>
+        </div>
+        <div class="col-md-12 col-sm-6 col-xs-24">
+            <div class="titre-formrech">Arrangement </div>
+            <div id="arrangement_handler_room1">
+                <select class=" typeselect form-control select-form " id="arrangement1" name="arrangement1" required="required">
+        <option value="DP" selected="selected">DP 45.1 TND  (  Supp Single25 TND)   </option>
+        <option value="PC">PC 61.6 TND  (  Supp Single25 TND)   </option>
+    </select>            </div>
+
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-24">
+         
+            <div id="combo_adlt_handler1">
+        <div class="dspresp2"> <div class="titre-formrech">Adlt(s)</div></div>
+<select id="adulte1" name="adulte1" class="select-form form-control">
+                <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+        </select>            </div>
+
+        </div>
+                            <div class="col-md-8 col-sm-8 col-xs-24">
+               
+                <div id="nbEnfant-handler-ch1">
+    <div class="col-md-3 col-sm-3 col-xs-24 dspresp2"> <div class="titre-formrech">Enf(s)</div></div>
+<select id="enfants1" name="enfants1" class="select-form form-control">
+                <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+        </select>
+                </div>
+            </div>
+        <div class="col-md-8 col-sm-8 col-xs-24">
+            <div class="titre-formrech">Bébé(s)</div>
+            <div id="nbBebe-handler-ch1" class="trp-selectbox">
+                <select id="bebe1" name="bebe1" class="select-form">
+                    <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <!-- <option value="3" >3</option>-->
+                </select>
+            </div>
+        </div>
+
+                    <div class="clearfix margin_top3"></div>
+            <div id="panelAgechambre1">
+                </div>
+                    <div class="clearfix"></div>
+
+        <div class="radiobut col-md-24 col-sm-24 col-xs-24">
+                            <div class="supplement-static1">
+                    <input class="one" type="checkbox" id="vuedemer1" name="vuedemer1" value="1">
+                    <span class="onelb">Vue de Mer(Demande)</span>
+                </div>
+            <div class="clearfix"></div>
+            <div class="supplement-static1" id="panelcheckboxbb1" style="display: none;">
+                <input class="two" type="checkbox" id="cotebebe1" name="cotebebe1" value="1">
+                <span class="onelb">Côte bébé (Demande) </span>
+            </div>
+            <div class="clearfix"></div>
+            <div class="supplement-static1" id="panelcheckboxnoce1" style="display: none;">
+                <input class="two" type="checkbox" id="noce1" name="noce1" value="1">
+                <span class="onelb">Voyage de noce</span>
+            </div>
+                               </div>
+    </div>
+
+
+</div><!-- one half end -->
+
+                        </div>
+                        <!--<div class="col-md-24 col-sm-24 pull-left">
+                            <div class="clearfix margin_top2"></div>
+                            <span style="color: #EF4D79">* </span>
+                        </div>-->
+                        <div class="clearfix margin_top2"></div>
+                        <div class="one_full pull-right" style="width: auto">
+
+                            <a id="tarif_dispo" href="javascript:submitform();" type="button" class="fbut btn btn-primary">Tarifs et disponibilités</a></div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="myModalStopSales" role="dialog">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+
+
+        </div>
+    
+    
+{% endblock %}       

@@ -1,0 +1,464 @@
+{% extends '::base.html.twig'%}
+
+ 
+{% block body %}
+    
+
+<body class="bg-cover">
+  
+        <div class="header">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand"><img src="{{asset('templates/images/image2.png')}}" alt=""></a>
+
+                        <br>
+                        <br>
+                        <br>
+                    </div>	
+
+                </div>	
+            </div>
+        <div class="site_wrapper">
+
+
+<script>
+    $(function () {
+
+        $('.tpbut').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#username',
+            modal: true
+        });
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
+    });
+
+</script>         
+
+
+<div class="clearfix"></div>
+
+
+
+            <div class="container">
+    <div class="featured_section col-lg-24">
+        <div class="logregform two reservation">
+            
+
+            <div class="feildcont">
+                <div class="qlinks">
+                                            
+                                    
+<form role="form" action="/user/login" method="post">
+    <div class="col-md-24">
+        <div>
+            <div class="">
+                <legend>Déjà membre? connectez-vous</legend></div>
+            <div class="col-md-5">
+                <label>E-mail <em>*</em></label>
+                <input type="email" placeholder="E-mail" name="identity" class="form-control" required="required">
+            </div>
+
+            <div class="col-md-5">
+                <label>Mot de passe<em>*</em></label>
+                <input type="password" placeholder="Mot de passe" name="credential" class="form-control" required="required">
+                            </div>
+
+            <div class=" pull-right">
+                <div class=" cleafix margin_bottom1"></div>
+                <button type="submit" class="btn btn-primary">Connexion</button>
+            </div>
+            <input type="hidden" value="user,sub_user,client" id="userrole" name="userrole">
+            <input type="hidden" name="to" value="coordonnees" class="form-control">
+        </div>
+    </div>
+</form>                                    <div class="divider_line2"></div><div class="clearfix"></div>
+                                    <div class="margin_top2"></div>
+<form method="POST" name="clients" id="clients" enctype="multipart/form-data" action="/client/addClient"><div class="col-md-24">
+    <div>
+        <div class="">
+            <legend>Nouveau ? inscrivez-vous</legend>
+
+        </div>
+
+        <div class="col-md-3">
+            <label>Civilité <em>*</em></label>
+            <select name="civilite" id="civilite" class=" form-control"><option value="0">Mr</option>
+<option value="1">Mme</option>
+<option value="2">Mlle</option></select>            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+
+
+
+        <div class="col-md-3">
+            <label>Prénom <em>*</em></label>
+            <input type="text" name="prenom_client" id="prenom_client" placeholder="Prénom" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div> 
+        <div class="col-md-3">
+            <label>Nom <em>*</em></label>
+            <input type="text" name="nom_client" id="nom_client" placeholder="Nom" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3">
+            <label>E-mail <em>*</em></label>
+            <input type="text" name="email" id="email" placeholder="E-mail" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="col-md-3">
+            <label>Mot de passe <em>*</em></label>
+            <input type="password" name="password" id="password" placeholder="Mot de passe" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3 ">
+            <label>Téléphone <em>*</em></label>
+            <input type="text" name="telephone" id="telephone" placeholder="Téléphone" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="col-md-3 ">
+            <label>Adresse<em>*</em></label>
+            <input type="text" name="adresse" id="adresse" placeholder="Adresse" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="col-md-3">
+            <label>Code Postal <em>*</em></label>
+            <input type="text" name="code_postal" id="code_postal" placeholder="Code Postal" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="col-md-3 ">
+            <label>Ville <em>*</em></label>
+            <input type="text" name="ville" id="ville" placeholder="Ville" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        <div class="col-md-3">
+            <label>Pays <em>*</em></label>
+            <input type="text" name="pays" id="pays" placeholder="Pays" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+
+        <div class="col-md-3">
+            <br><br>
+            <input type="checkbox" name="newsletter" id="newsletter" value="1">
+            
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3 " style="display: none;">
+            <label>CIN</label>
+            <input type="text" name="cod_client" id="cod_client" placeholder="CINNumber" class=" form-control" value="">            <span style="margin-top: 5px;" class="help-block "></span>
+        </div>
+        
+        <br>
+        <br>
+        <div class="col-md-24">
+            <label><em>* Champ obligatoire</em></label>
+
+        </div>
+
+        <div class=" pull-right">
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </div>
+    </div>
+</div>
+<div class="clearfix margin_bottom4"></div>
+
+</form>
+<script>
+
+    $("#clients").validation({inputs: ['civilite', 'nom_client', 'prenom_client', 'email', 'telephone', 'pays', 'ville', 'accepte', 'code_postal', 'adresse', 'email', 'password']});
+</script>
+                                    
+                        
+                                        </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+<script>
+    $(function () {
+        $('#mt_final_transfert').html($('#total_resa').val() + "<sup>TND</sup>");
+
+        $('#transfert').click(function () {
+            $.ajax({
+                url: "/tarifetdispo/Tranfert",
+                dataType: "json",
+                beforeSend: function () {
+                },
+                success: function (data) {
+                    $("#transfert_view").html(data.content);
+                },
+                error: function (xhr, status) {
+                    alert("Oups problèmes!");
+                },
+                complete: function (xhr, status) {
+
+                }
+            });
+
+        })
+    });
+</script>
+         
+
+<script>
+
+
+    $("#formNewsletter").validation({inputs: ['email']});
+
+    $(document).ready(function () {
+        $(window).bind("scroll", function () {
+            $(window).scrollTop() > 0 ? ($(".th_container").addClass("sticky"), $(".nav-header").addClass("bottom_line"), $(".bottom-header").slideUp(300, "linear")) : ($(".th_container").removeClass("sticky"), $(".nav-header").removeClass("bottom_line"), $(".bottom-header").slideDown(200, "linear"))
+        }), $("#back-top").hide(), $(window).bind("scroll", function () {
+            jQuery(this).scrollTop() > 150 ? jQuery("#back-top").fadeIn() : jQuery("#back-top").fadeOut()
+        }), $("#back-top").click(function () {
+            return jQuery("html, body").animate({scrollTop: 0}, 600), !1
+        }), $("img.imgOpa, button#back-top").mouseenter(function () {
+            $(this).stop(!0).animate({opacity: 1}, 100)
+        }).mouseleave(function () {
+            $(this).stop(!0).animate({opacity: .5}, 100)
+        })
+    });
+</script>
+        </div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5&appId=1579972125628965";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- ######### JS FILES ######### -->
+        <!-- get jQuery used for the theme -->
+
+        <script src="/public/front/js/style-switcher/styleselector.js"></script>
+        <script src="/public/front/js/animations/js/animations.min.js" type="text/javascript"></script>
+        <script src="/public/front/js/mainmenu/bootstrap.min.js"></script> 
+        <script src="/public/front/js/mainmenu/customeUI.js"></script> 
+        <script src="/public/front/js/masterslider/masterslider.min.js"></script>
+
+        <script type="text/javascript">
+            (function ($) {
+                "use strict";
+                var slider = new MasterSlider();
+                // adds Arrows navigation control to the slider.
+                slider.control('arrows');
+                slider.control('bullets');
+
+                slider.setup('masterslider', {
+                    width: 1400, // slider standard width
+                    height: 780, // slider standard height
+                    space: 0,
+                    speed: 27,
+                    layout: 'fullwidth',
+                    loop: true,
+                    preload: 0,
+                    autoplay: true,
+                    view: "basic",
+                });
+            })(jQuery);
+        </script>
+        <script type="text/javascript" src="/public/front/js/mainmenu/sticky.js"></script>-
+        <script type="text/javascript" src="/public/front/js/mainmenu/modernizr.custom.75180.js"></script>
+        <script type="text/javascript" src="/public/front/js/cform/form-validate.js"></script>
+        <script src="/public/front/js/scrolltotop/totop.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/public/front/js/cubeportfolio/jquery.cubeportfolio.min.js"></script>
+        <script type="text/javascript" src="/public/front/js/cubeportfolio/main4.js"></script>
+        <script src="/public/front/js/carouselowl/owl.carousel.js"></script>
+        <script type="text/javascript" src="/public/front/js/universal/custom.js"></script>
+        <script src="/public/front/js/tabs/assets/js/responsive-tabs.min.js" type="text/javascript"></script>
+
+        <script src="/public/front/js/loopslider/jquery.loopslider.js"></script>
+        <!--<script src=""></script>-->
+        <script>
+            $(function () {
+                $('#slider').loopSlider({
+                    autoMove: true,
+                    mouseOnStop: true,
+                    turn: 9000,
+                    motion: 'swing',
+                    delay: 500,
+                    width: 750,
+                    height: 400,
+                    marginLR: 10,
+                    viewSize: 100,
+                    viewOverflow: 'visible',
+                    navPositionBottom: 30,
+                    navibotton: true,
+                    navbtnImage: ''
+                });
+            });
+        </script>
+
+        <script src="/public/front/js/bootstrap-datepicker/external/jquery-ui/datepicker.js"></script>
+
+        <script>
+            /*$(function(){
+             $( ".date-input-css" ).datepicker();
+             })*/
+        </script>
+        <script src="/public/front/js/moment/moment-with-locales.js"></script>
+        <script src="/public/front/js/bootstrap/bootstrap-datetimepicker.js"></script>
+        <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+        <!--<script src="/public/front/modal/classie.js"></script>
+        <script src="/public/front/modal/modalEffects.js"></script>-->
+
+        <!-- for the blur effect -->
+        <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+        <script src="/public/front/js/jQuery-Mask-Plugin.js"></script>
+        <script src="/public/front/modal/cssParser.js"></script>
+        <script src="/public/front/js/photoSwipe/photoswipe.js"></script>
+        <script src="/public/front/js/photoSwipe/photoswipe-ui-default.min.js"></script>
+        <script src="/public/front/js/magnific-popup/jquery.magnific-popup.js"></script>
+
+        <script>
+            $("#zone-moteur").on("click", "#addRoom", function (e) {
+                var nb_chambre = $("#detail-chambre-handler > div").length;
+
+                if (nb_chambre < 6) {
+                    $.ajax({
+                        url: '/recherchehotel/addRoom',
+                        type: "POST",
+                        data: 'index=' + nb_chambre,
+                        dataType: "json",
+                        beforeSend: function () {
+                            $('#addRoom').prop('disabled', true);
+                        },
+                        success: function (data) {
+                            //console.log(data.html);
+                            //  init();
+                            $("#detail-chambre-handler").append(data.html);
+                            $('#nbChambre').val(nb_chambre + 1);
+                        },
+                        error: function (xhr, status) {
+                            alert("Oups problèmes de connexion. Veuillez selectionner les dates à nouveau");
+                        },
+                        complete: function (xhr, status) {
+                            // $("#addRoom").show();
+                            $('#addRoom').prop('disabled', false);
+                        }
+                    });
+                }
+
+            })
+                    ;
+            $("#zone-moteur").on("click", "#addRoomInterne", function (e) {
+                var nb_chambre = $("#detail-chambre-handler > div").length;
+
+                if (nb_chambre < 6) {
+                    $.ajax({
+                        url: '/recherchehotel/addRoomHome',
+                        type: "POST",
+                        data: 'index=' + nb_chambre,
+                        dataType: "json",
+                        beforeSend: function () {
+                            $('#addRoom').prop('disabled', true);
+                        },
+                        success: function (data) {
+                            //console.log(data.html);
+                            //  init();
+                            $("#detail-chambre-handler").append(data.html);
+                            $('#nbChambre').val(nb_chambre + 1);
+                        },
+                        error: function (xhr, status) {
+                            alert("Oups problèmes de connexion. Veuillez selectionner les dates à nouveau");
+                        },
+                        complete: function (xhr, status) {
+                            // $("#addRoom").show();
+                            $('#addRoom').prop('disabled', false);
+                        }
+                    });
+                }
+
+            })
+                    ;
+        </script>
+
+        <script>
+            $("#zone-moteur").on("click", "#deleteRoom", function (e) {
+                //  init();
+                var nb_chambre = $("#detail-chambre-handler > div").length;
+                if (nb_chambre > 1) {
+                    $("#detail-chambre-handler > div.item-chambre:last-child").detach();
+                    $('#nbChambre').val(nb_chambre - 1);
+                }
+            })
+            $("#zone-moteur").on("click", "#deleteRoomInterne", function (e) {
+                //  init();
+                var nb_chambre = $("#detail-chambre-handler > div").length;
+                if (nb_chambre > 1) {
+                    $("#detail-chambre-handler > div.item-chambre:last-child").detach();
+                    $('#nbChambre').val(nb_chambre - 1);
+                }
+            })
+                    ;
+            $("#zone-moteur").on("click", ".button4", function (e) {
+                var adulte = 0;
+                var enfants = 0;
+                var somadl = 0;
+                var somenf = 0;
+                var nbPaxRoom = true;
+                var ageenfSpecifiee = true;
+                var ShowAlert = false;
+                var msgAlert = '';
+                for (k = 1; k <= $("#detail-chambre-handler > div").length; k++) {
+                    adulte = $('#adulte' + k).val();
+                    somadl += parseInt(adulte);
+                    enfants = $('#enfants' + k).val();
+                    somenf += parseInt(enfants);
+                    if (enfants > 0) {
+                        for (m = 1; m <= enfants; m++) {
+
+                            if (parseInt($("#chambreage" + k + "-" + m).val()) === -1) {
+                                ageenfSpecifiee = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (parseInt(adulte + enfants) === 0) {
+                        nbPaxRoom = false;
+                        break;
+                    }
+                }
+                if (parseInt(somadl) === 0) {
+                    ShowAlert = true;
+                    msgAlert = 'Veuillez spécifier au moins 1 Adulte !!! ';
+                }
+                if ((parseInt(somadl + somenf) === 0) || (nbPaxRoom === false)) {
+                    ShowAlert = true;
+                    msgAlert = "Le nombre d'adultes + le nombre d'enfants doit être supérieur à zero !!! ";
+                }
+                if (ageenfSpecifiee === false) {
+                    ShowAlert = true;
+                    msgAlert = "Veuillez spécifier le(s) age(s) de(s) enfant(s) !!! ";
+                }
+                if (ShowAlert === true) {
+
+                    $.magnificPopup.open({
+                        items: {
+                            src: '<div  class="white-popup-block"><h3>Min Adulte(s)</h3><div><div class="clearfix"></div><div class="full"><span> <i class="fa fa-exclamation-triangle"></i>' + msgAlert + '</span></div><div class="clearfix"></div></div><p ><button title="Fermer" type="button" class="mfp-close">×</button></p></div>',
+                            type: "inline"
+                        },
+                        mainClass: "mfp-fade",
+                        removalDelay: 210
+                    });
+                    e.preventDefault();
+
+                } else {
+                    $('#myForm').trigger('submit');
+
+                }
+            });
+        </script>
+        <!-- Placez cette balise dans l'en-tête ou juste avant la balise de fermeture du corps de texte. -->
+        <script src="https://apis.google.com/js/platform.js" async="" defer="" gapi_processed="true">
+            {
+                lang: 'fr'
+            }
+
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
+    
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/d_vbiawPdxB.js?version=44#channel=f248f110681f174&amp;origin=http%3A%2F%2Fwww.yougotravel.tn" style="border: none;"></iframe></div></div></div></body>
+
+{% endblock %}    

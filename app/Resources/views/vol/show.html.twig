@@ -1,0 +1,112 @@
+{% extends "BackBundle::base.html.twig" %}
+
+
+{% block A %}
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead">Listes Des Vols</p>
+            <div class="list-group">
+                <a href="{{path('vol_new')}}" class="list-group-item">Ajouter</a>
+                <a href="{{path('vol_modifier')}}" class="list-group-item">Modifier</a>
+                <a href="#" class="list-group-item">Recherche</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-5">
+            <h1>Vol</h1>
+
+            <table class ="table table-striped" >
+                <tbody>
+
+                 
+                    <tr>
+                        <th>Typevol</th>
+                        <td>{{ vol.typevol }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datedepart</th>
+                        <td>{% if vol.datedepart %}{{ vol.datedepart|date('Y-m-d') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Civilite</th>
+                        <td>{{ vol.civilite }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prenom</th>
+                        <td>{{ vol.prenom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ vol.nom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ vol.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Telephone</th>
+                        <td>{{ vol.telephone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Aeroportdedepart</th>
+                        <td>{{ vol.aeroportdedepart }}</td>
+                    </tr>
+                    <tr>
+                        <th>Aeroportdarrive</th>
+                        <td>{{ vol.aeroportdarrive }}</td>
+                    </tr>
+                    <tr>
+                        <th>Classe</th>
+                    
+                      <td>{{ vol.classe }}</td>
+                      
+                    </tr>
+                    <tr>
+                        <th>Nombreadultes</th>
+                        <td>{{ vol.nombreadultes }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombreenfant</th>
+                        <td>{{ vol.nombreenfant }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombrebebes</th>
+                        <td>{{ vol.nombrebebes }}</td>
+                    </tr>
+                    <tr>
+                        <th>Observation</th>
+                        <td>{{ vol.observation }}</td>
+                    </tr>
+
+
+
+             
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    {#{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }#}
+                </li>
+            </ul>
+
+        </div>    
+    </div>
+{% endblock A %}   
+
+
+
+
+
+
+
+
+

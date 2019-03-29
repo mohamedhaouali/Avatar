@@ -1,0 +1,108 @@
+gestion_projet_homepage:
+    path:     /
+    defaults: { _controller: GestionProjetBundle:Default:index }
+
+gestion_projet_vol:
+    resource: "@GestionProjetBundle/Resources/config/routing/vol.yml"
+    prefix:   /vol
+   
+acceuil:
+    path:     /acceuil
+    defaults: { _controller: GestionProjetBundle:Default:acceuil }    
+    
+belgrade:
+    path:     /belgrade
+    defaults: { _controller: GestionProjetBundle:Default:belgrade } 
+    
+casa:
+    path:     /casa
+    defaults: { _controller: GestionProjetBundle:Default:casa }
+    
+prague:
+    path:     /prague
+    defaults: { _controller: GestionProjetBundle:Default:prague } 
+    
+beyrouth:
+    path:     /beyrouth
+    defaults: { _controller: GestionProjetBundle:Default:beyrouth } 
+    
+barcelone:
+    path:     /barcelone
+    defaults: { _controller: GestionProjetBundle:Default:barcelone } 
+    
+portugal:
+    path:     /portugal
+    defaults: { _controller: GestionProjetBundle:Default:portugal }  
+    
+nice:
+    path:     /nice
+    defaults: { _controller: GestionProjetBundle:Default:nice }   
+    
+inde:
+    path:     /inde
+    defaults: { _controller: GestionProjetBundle:Default:inde } 
+    
+rome:
+    path:     /rome
+    defaults: { _controller: GestionProjetBundle:Default:rome } 
+    
+paris:
+    path:     /paris
+    defaults: { _controller: GestionProjetBundle:Default:paris } 
+    
+bruxelle:
+    path:     /bruxelle
+    defaults: { _controller: GestionProjetBundle:Default:bruxelle }  
+    
+madrid:
+    path:     /madrid
+    defaults: { _controller: GestionProjetBundle:Default:madrid } 
+    
+omra1:    
+    path:     /omra1
+    defaults: { _controller: GestionProjetBundle:Default:omra1 } 
+    
+omra2:    
+    path:     /omra2
+    defaults: { _controller: GestionProjetBundle:Default:omra2 }  
+    
+omra3:    
+    path:     /omra3
+    defaults: { _controller: GestionProjetBundle:Default:omra3 }      
+    
+galerie:    
+    path:     /galerie
+    defaults: { _controller: GestionProjetBundle:Default:galerie } 
+    
+vol: 
+    path:     /vol1
+    defaults: { _controller: GestionProjetBundle:Default:vol } 
+    
+hotel: 
+    path:     /hotel1
+    defaults: { _controller: GestionProjetBundle:Default:hotel }  
+    
+detail: 
+    path:     /detail
+    defaults: { _controller: GestionProjetBundle:Default:detail }  
+    
+detailhotel: 
+    path:     /detailhotel
+    defaults: { _controller: GestionProjetBundle:Default:detailHotel }      
+   
+contact:
+    path:     /contact
+    defaults: { _controller: GestionProjetBundle:Default:contact }  
+    
+panier:    
+    path:     /panier
+    defaults: { _controller: GestionProjetBundle:Default:panier }  
+
+sejour:    
+    path:     /sejour
+    defaults: { _controller: GestionProjetBundle:Default:sejour }  
+    
+register:    
+    path:     /register
+    defaults: { _controller: GestionProjetBundle:Default:register }     
+ 
